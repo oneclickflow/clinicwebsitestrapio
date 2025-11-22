@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 import { Smile, Shield, Sparkles, Heart, Star, Zap, ChevronDown, Check, Clock, Euro } from 'lucide-react';
 
-export default function TratamientosPage() {
+function TratamientosContent() {
     const searchParams = useSearchParams();
     const categoryParam = searchParams.get('category');
     const [activeCategory, setActiveCategory] = useState(0);
@@ -422,5 +422,17 @@ export default function TratamientosPage() {
                 </div>
             </a>
         </main>
+    );
+}
+
+export default function TratamientosPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-white flex items-center justify-center">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-[#0f3d56]"></div>
+            </div>
+        }>
+            <TratamientosContent />
+        </Suspense>
     );
 }
