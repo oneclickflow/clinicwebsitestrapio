@@ -26,7 +26,7 @@ const stats = [
 
 const TrustSection = () => {
   return (
-    <section className="py-20 bg-[#FFFBF0]"> {/* Lighter Gold/Beige background */}
+    <section className="py-20"> {/* Lighter Gold/Beige background */}
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0f3d56] mb-4">¿Por Qué Elegirnos?</h2>
@@ -38,7 +38,7 @@ const TrustSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className="mb-4 p-4 bg-white rounded-full shadow-sm text-[#D4AF37]">
+              <div className="mb-4 p-4 bg-white rounded-full shadow-sm text-[#B5902B]">
                 <stat.icon className="w-8 h-8" />
               </div>
               <span className="text-3xl md:text-4xl font-bold text-[#0f3d56] block mb-2">

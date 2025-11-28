@@ -18,14 +18,14 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="bg-gray-50 py-12 relative z-20">
+    <section className="py-12 relative z-20">
       <div className="container mx-auto px-8">
         <div className="grid md:grid-cols-3 gap-8 -mt-20">
           {features.map((feature, index) => (
             <div key={index} className="bg-white p-8 rounded-lg shadow-lg flex flex-col gap-4 hover:shadow-xl transition-shadow border-t-4 border-[#0f3d56]">
               <div className="flex items-start gap-3">
                 <div className="mt-1 min-w-[20px]">
-                  <Check className="w-5 h-5 text-[#0f3d56]" /> 
+                  <Check className="w-5 h-5 text-[#0f3d56]" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>

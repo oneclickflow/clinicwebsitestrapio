@@ -20,7 +20,7 @@ const ClinicInstallations = () => {
     ];
 
     return (
-        <section className="py-24 bg-white">
+        <section className="py-24">
             <div className="container mx-auto px-6 md:px-12">
 
                 <div className="flex flex-col md:flex-row gap-12 items-start mb-16">
@@ -58,15 +58,15 @@ const ClinicInstallations = () => {
                     ))}
                 </div>
 
-                <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100 pt-12">
+                <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
                     {[
                         { label: "Gabinetes", value: "4" },
                         { label: "Tecnología", value: "3D" },
                         { label: "Sala de Espera", value: "Premium" },
                         { label: "Parking", value: "Gratuito" }
                     ].map((stat, idx) => (
-                        <div key={idx} className="text-center md:text-left">
-                            <p className="text-3xl font-bold text-[#D4AF37] mb-1">{stat.value}</p>
+                        <div key={idx} className="text-center p-6 bg-white rounded-2xl shadow-sm">
+                            <p className="text-3xl font-bold text-[#B5902B] mb-1">{stat.value}</p>
                             <p className="text-sm text-gray-400 uppercase tracking-wider font-medium">{stat.label}</p>
                         </div>
                     ))}

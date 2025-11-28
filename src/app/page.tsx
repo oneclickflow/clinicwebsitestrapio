@@ -11,19 +11,61 @@ import Footer from '@/components/Footer';
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 import ClinicInstallations from '@/components/ClinicInstallations';
 import MedicalTeam from '@/components/MedicalTeam';
+import { fetchAPI } from '@/lib/strapi';
 
-export default function Home() {
+async function getHeroData() {
+  try {
+    const res = await fetchAPI("/hero", { populate: "*" });
+    return res?.data;
+  } catch (error) {
+    return null;
+  }
+}
+
+async function getServices() {
+  try {
+    const res = await fetchAPI("/services", { sort: "categoryIndex:asc" });
+    return res?.data;
+  } catch (error) {
+    return null;
+  }
+}
+
+async function getDoctors() {
+  try {
+    const res = await fetchAPI("/doctors", { populate: "*" });
+    return res?.data;
+  } catch (error) {
+    return null;
+  }
+}
+
+async function getTestimonials() {
+  try {
+    const res = await fetchAPI("/testimonials", { populate: "*" });
+    return res?.data;
+  } catch (error) {
+    return null;
+  }
+}
+
+export default async function Home() {
+  const heroData = await getHeroData();
+  const servicesData = await getServices();
+  const doctorsData = await getDoctors();
+  const testimonialsData = await getTestimonials();
+
   return (
-    <main className="min-h-screen bg-white text-[#333333] font-sans">
+    <main className="min-h-screen text-[#333333] font-sans">
       <Header />
 
-      <Hero />
+      <Hero data={heroData} />
       <ClinicInstallations />
-      <Services />
-      <MedicalTeam />
+      <Services data={servicesData} />
+      <MedicalTeam data={doctorsData} />
       <BeforeAfterSection />
       <TrustSection />
-      <Testimonials />
+      <Testimonials data={testimonialsData} />
       <CTABanner />
       <ContactPreview />
 

@@ -3,7 +3,7 @@ import { Clock, MapPin, ThumbsUp, Phone, Mail } from 'lucide-react';
 
 const ContactPreview = () => {
   return (
-    <section className="py-20 bg-[#fafafa]">
+    <section className="py-20">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
@@ -91,13 +91,13 @@ const ContactPreview = () => {
             <div className="grid sm:grid-cols-2 gap-8 pb-8 border-b border-gray-200">
               <div>
                 <span className="text-gray-400 text-sm block mb-1">Contacto:</span>
-                <a href="tel:+34649537609" className="text-lg font-bold text-[#0f3d56] hover:text-[#D4AF37] transition-colors">
+                <a href="tel:+34649537609" className="text-lg font-bold text-[#0f3d56] hover:text-[#B5902B] transition-colors">
                   (+34) 649 537 609
                 </a>
               </div>
               <div>
                 <span className="text-gray-400 text-sm block mb-1">email:</span>
-                <a href="mailto:info@clinicaliébana.com" className="text-lg font-bold text-[#0f3d56] hover:text-[#D4AF37] transition-colors border-b border-[#0f3d56] hover:border-[#D4AF37]">
+                <a href="mailto:info@clinicaliébana.com" className="text-lg font-bold text-[#0f3d56] hover:text-[#B5902B] transition-colors border-b border-[#0f3d56] hover:border-[#B5902B]">
                   info@clinicaliébana.com
                 </a>
               </div>

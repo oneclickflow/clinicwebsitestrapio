@@ -2,41 +2,57 @@
 
 import React from 'react';
 import { Linkedin } from 'lucide-react';
+import { DoctorData } from '@/types/strapi';
+import { getStrapiMedia } from '@/lib/strapi';
 
-const MedicalTeam = () => {
-    const team = [
-        {
-            name: "Dr. Ana Liébana Bobadilla",
-            specialty: "Directora & Ortodoncista",
-            image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800",
-            bio: "Especialista en ortodoncia invisible con más de 15 años de experiencia transformando sonrisas.",
-            linkedin: "#"
-        },
-        {
-            name: "Dr. Carlos Sada Martínez",
-            specialty: "Implantología & Cirugía",
-            image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800",
-            bio: "Experto en implantes dentales y cirugía oral avanzada. Certificado por la European Association of Osseointegration.",
-            linkedin: "#"
-        },
-        {
-            name: "Dra. María González López",
-            specialty: "Estética Dental",
-            image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800",
-            bio: "Especializada en diseño de sonrisa y carillas dentales. Miembro de la Academia Española de Odontología Estética.",
-            linkedin: "#"
-        },
-        {
-            name: "Dr. Javier Ruiz Fernández",
-            specialty: "Endodoncia & Periodoncia",
-            image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800",
-            bio: "Dedicado a salvar dientes mediante tratamientos de conducto y cuidado de encías con tecnología de última generación.",
-            linkedin: "#"
-        }
-    ];
+const defaultTeam = [
+    {
+        name: "Dr. Ana Liébana Bobadilla",
+        specialty: "Directora & Ortodoncista",
+        image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800",
+        bio: "Especialista en ortodoncia invisible con más de 15 años de experiencia transformando sonrisas.",
+        linkedin: "#"
+    },
+    {
+        name: "Dr. Carlos Sada Martínez",
+        specialty: "Implantología & Cirugía",
+        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=800",
+        bio: "Experto en implantes dentales y cirugía oral avanzada. Certificado por la European Association of Osseointegration.",
+        linkedin: "#"
+    },
+    {
+        name: "Dra. María González López",
+        specialty: "Estética Dental",
+        image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800",
+        bio: "Especializada en diseño de sonrisa y carillas dentales. Miembro de la Academia Española de Odontología Estética.",
+        linkedin: "#"
+    },
+    {
+        name: "Dr. Javier Ruiz Fernández",
+        specialty: "Endodoncia & Periodoncia",
+        image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800",
+        bio: "Dedicado a salvar dientes mediante tratamientos de conducto y cuidado de encías con tecnología de última generación.",
+        linkedin: "#"
+    }
+];
+
+interface MedicalTeamProps {
+    data?: DoctorData[] | null;
+}
+
+const MedicalTeam = ({ data }: MedicalTeamProps) => {
+    const team = data?.length
+        ? data.map(member => ({
+            name: member.attributes.name,
+            specialty: member.attributes.specialty,
+            image: getStrapiMedia(member.attributes.image?.data?.attributes?.url) || "",
+            bio: member.attributes.bio,
+            linkedin: member.attributes.linkedin
+        }))
+        : defaultTeam;
 
     return (
-        <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-24">
             <div className="container mx-auto px-6 md:px-12">
 
                 {/* Header */}
@@ -75,7 +91,7 @@ const MedicalTeam = () => {
                                     {/* Content Overlay */}
                                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                                         <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                                        <p className="text-[#D4AF37] text-sm font-medium mb-3">{member.specialty}</p>
+                                        <p className="text-[#B5902B] text-sm font-medium mb-3">{member.specialty}</p>
                                         <p className="text-sm text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                             {member.bio}
                                         </p>

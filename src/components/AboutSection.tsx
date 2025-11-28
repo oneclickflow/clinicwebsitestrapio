@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const AboutSection = () => {
   return (
-    <section className="w-full bg-gray-50 py-20 md:py-24"> {/* Changed bg to gray-50 to match Features */}
+    <section className="w-full py-20 md:py-24"> {/* Changed bg to gray-50 to match Features */}
       <div className="container mx-auto px-8"> {/* Aligned padding with Features component */}
-        
+
         {/* Header Section Centered */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#0f3d56] text-xs font-bold tracking-[0.2em] uppercase block mb-4">
@@ -15,17 +15,17 @@ const AboutSection = () => {
             Bienvenido a <span className="text-[#0f3d56]">Clínica Liébana Bobadilla & Sada</span>
           </h2>
           <p className="mt-4 text-xl text-gray-600 font-medium">
-             Expertos en diseñar sonrisas que cambian vidas.
+            Expertos en diseñar sonrisas que cambian vidas.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
+
           {/* Left Side: Image */}
           <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1663755489920-5e09f66d011a?q=80&w=1000&auto=format&fit=crop" 
-              alt="Expertos en Estética Dental" 
+            <img
+              src="https://images.unsplash.com/photo-1663755489920-5e09f66d011a?q=80&w=1000&auto=format&fit=crop"
+              alt="Expertos en Estética Dental"
               className="w-full h-full object-cover"
             />
           </div>

@@ -52,7 +52,7 @@ export default function ClinicaPage() {
     ];
 
     return (
-        <main className="min-h-screen bg-white text-[#333333] font-sans">
+        <main className="min-h-screen text-[#333333] font-sans">
             <Header />
 
             {/* Hero Section */}
@@ -61,7 +61,7 @@ export default function ClinicaPage() {
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
                 </div>
                 <div className="relative z-10 text-center text-white px-6">
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#D4AF37]">
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#B5902B]">
                         Instalaciones
                     </span>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -74,7 +74,7 @@ export default function ClinicaPage() {
             </section>
 
             {/* Overview Section */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="max-w-4xl mx-auto text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-[#0f3d56] mb-6">
@@ -95,8 +95,8 @@ export default function ClinicaPage() {
                             { value: "15+", label: "Años de Experiencia" },
                             { value: "100%", label: "Equipamiento Digital" }
                         ].map((stat, idx) => (
-                            <div key={idx} className="text-center p-6 bg-gray-50 rounded-2xl">
-                                <p className="text-4xl font-bold text-[#D4AF37] mb-2">{stat.value}</p>
+                            <div key={idx} className="text-center p-6 bg-white rounded-2xl">
+                                <p className="text-4xl font-bold text-[#B5902B] mb-2">{stat.value}</p>
                                 <p className="text-sm text-gray-600 uppercase tracking-wider">{stat.label}</p>
                             </div>
                         ))}
@@ -105,7 +105,7 @@ export default function ClinicaPage() {
             </section>
 
             {/* Virtual Tour - Bento Grid */}
-            <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="text-center mb-16">
                         <span className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase block mb-3">
@@ -153,7 +153,7 @@ export default function ClinicaPage() {
             </section>
 
             {/* Technology Section */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="text-center mb-16">
                         <span className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase block mb-3">
@@ -172,10 +172,10 @@ export default function ClinicaPage() {
                         {technology.map((tech, idx) => (
                             <div
                                 key={idx}
-                                className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-100 hover:border-[#D4AF37] transition-all duration-300 hover:shadow-xl"
+                                className="bg-gradient-to-br from-white to-white p-8 rounded-2xl border border-gray-100 hover:border-[#B5902B] transition-all duration-300 hover:shadow-xl"
                             >
                                 <div className="w-12 h-12 bg-[#0f3d56] rounded-xl flex items-center justify-center mb-4">
-                                    <Check className="w-6 h-6 text-[#D4AF37]" />
+                                    <Check className="w-6 h-6 text-[#B5902B]" />
                                 </div>
                                 <h3 className="text-xl font-bold text-[#0f3d56] mb-2">{tech.name}</h3>
                                 <p className="text-gray-600">{tech.description}</p>
@@ -186,7 +186,7 @@ export default function ClinicaPage() {
             </section>
 
             {/* Amenities & Certifications */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="grid md:grid-cols-2 gap-16">
 
@@ -202,7 +202,7 @@ export default function ClinicaPage() {
                                             className="flex items-center gap-4 bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
                                         >
                                             <div className="w-12 h-12 bg-[#0f3d56] rounded-lg flex items-center justify-center flex-shrink-0">
-                                                <Icon className="w-6 h-6 text-[#D4AF37]" />
+                                                <Icon className="w-6 h-6 text-[#B5902B]" />
                                             </div>
                                             <span className="text-lg font-semibold text-gray-800">{amenity.label}</span>
                                         </div>
@@ -220,7 +220,7 @@ export default function ClinicaPage() {
                                         key={idx}
                                         className="flex items-start gap-4 bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow"
                                     >
-                                        <div className="w-12 h-12 bg-[#D4AF37] rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <div className="w-12 h-12 bg-[#B5902B] rounded-lg flex items-center justify-center flex-shrink-0">
                                             <Award className="w-6 h-6 text-white" />
                                         </div>
                                         <div>
@@ -236,7 +236,7 @@ export default function ClinicaPage() {
             </section>
 
             {/* Location & Hours */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
@@ -246,7 +246,7 @@ export default function ClinicaPage() {
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
-                                    <MapPin className="w-6 h-6 text-[#D4AF37] flex-shrink-0 mt-1" />
+                                    <MapPin className="w-6 h-6 text-[#B5902B] flex-shrink-0 mt-1" />
                                     <div>
                                         <h3 className="font-semibold text-gray-800 mb-1">Dirección</h3>
                                         <p className="text-gray-600">
@@ -257,7 +257,7 @@ export default function ClinicaPage() {
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <Clock className="w-6 h-6 text-[#D4AF37] flex-shrink-0 mt-1" />
+                                    <Clock className="w-6 h-6 text-[#B5902B] flex-shrink-0 mt-1" />
                                     <div>
                                         <h3 className="font-semibold text-gray-800 mb-2">Horario</h3>
                                         <div className="text-gray-600 space-y-1">
@@ -269,7 +269,7 @@ export default function ClinicaPage() {
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <Car className="w-6 h-6 text-[#D4AF37] flex-shrink-0 mt-1" />
+                                    <Car className="w-6 h-6 text-[#B5902B] flex-shrink-0 mt-1" />
                                     <div>
                                         <h3 className="font-semibold text-gray-800 mb-1">Parking</h3>
                                         <p className="text-gray-600">
@@ -310,7 +310,7 @@ export default function ClinicaPage() {
                             href="https://wa.me/34649537609"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-[#D4AF37] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
+                            className="bg-[#B5902B] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
                         >
                             Reservar Consulta
                         </a>

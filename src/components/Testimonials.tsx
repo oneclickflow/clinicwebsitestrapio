@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { TestimonialData } from '@/types/strapi';
 
-const testimonials = [
+const defaultTestimonials = [
   {
     name: "María García",
     text: "Excelente atención y profesionalismo. El equipo me hizo sentir muy cómoda durante todo el tratamiento. ¡100% recomendado!",
@@ -48,7 +49,20 @@ const testimonials = [
   }
 ];
 
-const Testimonials = () => {
+interface TestimonialsProps {
+  data?: TestimonialData[] | null;
+}
+
+const Testimonials = ({ data }: TestimonialsProps) => {
+  const testimonials = data?.length
+    ? data.map(t => ({
+      name: t.attributes.name,
+      text: t.attributes.text,
+      rating: t.attributes.rating,
+      role: t.attributes.role
+    }))
+    : defaultTestimonials;
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
 
@@ -90,7 +104,7 @@ const Testimonials = () => {
   }, [nextSlide]);
 
   return (
-    <section className="py-20 bg-gray-50 overflow-hidden">
+    <section className="py-20 overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0f3d56] mb-4">Lo Que Dicen Nuestros Pacientes</h2>

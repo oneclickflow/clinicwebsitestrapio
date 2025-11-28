@@ -63,7 +63,7 @@ function TratamientosContent() {
             title: "Implantología",
             icon: Shield,
             description: "Recupera la funcionalidad y estética de tus dientes perdidos con soluciones permanentes.",
-            color: "#D4AF37",
+            color: "#B5902B",
             services: [
                 {
                     name: "Implante Unitario",
@@ -171,7 +171,7 @@ function TratamientosContent() {
             title: "Periodoncia",
             icon: Star,
             description: "Tratamiento especializado para la salud de tus encías y prevención de pérdida dental.",
-            color: "#D4AF37",
+            color: "#B5902B",
             services: [
                 {
                     name: "Estudio Periodontal",
@@ -242,7 +242,7 @@ function TratamientosContent() {
     ];
 
     return (
-        <main className="min-h-screen bg-white text-[#333333] font-sans">
+        <main className="min-h-screen text-[#333333] font-sans">
             <Header />
 
             {/* Hero Section */}
@@ -251,7 +251,7 @@ function TratamientosContent() {
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
                 </div>
                 <div className="relative z-10 text-center text-white px-6">
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#D4AF37]">
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#B5902B]">
                         Excelencia Clínica
                     </span>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -264,7 +264,7 @@ function TratamientosContent() {
             </section>
 
             {/* Categories Overview */}
-            <section className="py-16 bg-gray-50">
+            <section className="py-16">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                         {treatments.map((category, idx) => {
@@ -278,7 +278,7 @@ function TratamientosContent() {
                                         : 'bg-white text-gray-700 hover:shadow-lg hover:scale-102'
                                         }`}
                                 >
-                                    <Icon className={`w-8 h-8 mx-auto mb-3 ${activeCategory === idx ? 'text-[#D4AF37]' : 'text-[#0f3d56]'
+                                    <Icon className={`w-8 h-8 mx-auto mb-3 ${activeCategory === idx ? 'text-[#B5902B]' : 'text-[#0f3d56]'
                                         }`} />
                                     <p className="text-sm font-semibold text-center">{category.title}</p>
                                 </button>
@@ -289,13 +289,13 @@ function TratamientosContent() {
             </section>
 
             {/* Active Category Details */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="max-w-6xl mx-auto">
                         {/* Category Header */}
                         <div className="text-center mb-16">
                             {React.createElement(treatments[activeCategory].icon, {
-                                className: "w-16 h-16 mx-auto mb-4 text-[#D4AF37]"
+                                className: "w-16 h-16 mx-auto mb-4 text-[#B5902B]"
                             })}
                             <h2 className="text-3xl md:text-5xl font-bold text-[#0f3d56] mb-4">
                                 {treatments[activeCategory].title}
@@ -310,7 +310,7 @@ function TratamientosContent() {
                             {treatments[activeCategory].services.map((service, idx) => (
                                 <div
                                     key={idx}
-                                    className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-100 hover:border-[#D4AF37] hover:shadow-xl transition-all duration-300"
+                                    className="bg-gradient-to-br from-white to-white p-8 rounded-2xl border border-gray-100 hover:border-[#B5902B] hover:shadow-xl transition-all duration-300"
                                 >
                                     <h3 className="text-2xl font-bold text-[#0f3d56] mb-3">
                                         {service.name}
@@ -322,14 +322,14 @@ function TratamientosContent() {
                                     {/* Info Grid */}
                                     <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-gray-200">
                                         <div className="flex items-center gap-2">
-                                            <Clock className="w-5 h-5 text-[#D4AF37]" />
+                                            <Clock className="w-5 h-5 text-[#B5902B]" />
                                             <div>
                                                 <p className="text-xs text-gray-500">Duración</p>
                                                 <p className="text-sm font-semibold text-gray-800">{service.duration}</p>
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <Euro className="w-5 h-5 text-[#D4AF37]" />
+                                            <Euro className="w-5 h-5 text-[#B5902B]" />
                                             <div>
                                                 <p className="text-xs text-gray-500">Precio</p>
                                                 <p className="text-sm font-semibold text-gray-800">{service.price}</p>
@@ -343,7 +343,7 @@ function TratamientosContent() {
                                         <ul className="space-y-2">
                                             {service.benefits.map((benefit, i) => (
                                                 <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                                                    <Check className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
+                                                    <Check className="w-4 h-4 text-[#B5902B] flex-shrink-0" />
                                                     {benefit}
                                                 </li>
                                             ))}
@@ -357,7 +357,7 @@ function TratamientosContent() {
             </section>
 
             {/* Why Choose Us */}
-            <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0f3d56] mb-12">
@@ -370,7 +370,7 @@ function TratamientosContent() {
                                 { title: "Financiación Flexible", desc: "Planes de pago adaptados a tu presupuesto sin intereses" }
                             ].map((item, idx) => (
                                 <div key={idx} className="p-6">
-                                    <div className="w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <div className="w-12 h-12 bg-[#B5902B] rounded-full flex items-center justify-center mx-auto mb-4">
                                         <Check className="w-6 h-6 text-white" />
                                     </div>
                                     <h3 className="text-xl font-bold text-[#0f3d56] mb-2">{item.title}</h3>
@@ -396,7 +396,7 @@ function TratamientosContent() {
                             href="https://wa.me/34649537609"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-[#D4AF37] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
+                            className="bg-[#B5902B] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
                         >
                             Reservar Consulta
                         </a>
@@ -428,7 +428,7 @@ function TratamientosContent() {
 export default function TratamientosPage() {
     return (
         <Suspense fallback={
-            <div className="min-h-screen bg-white flex items-center justify-center">
+            <div className="min-h-screen flex items-center justify-center">
                 <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-[#0f3d56]"></div>
             </div>
         }>

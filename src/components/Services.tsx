@@ -1,8 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
 import { Smile, Sparkles, Shield, Heart, Star, Zap, ArrowRight } from 'lucide-react';
+import { ServiceData } from '@/types/strapi';
 
-const services = [
+const iconMap: { [key: string]: React.ElementType } = {
+  Smile,
+  Sparkles,
+  Shield,
+  Heart,
+  Star,
+  Zap
+};
+
+const defaultServices = [
   {
     title: "Ortodoncia",
     description: "Alinea tu sonrisa con los últimos avances en brackets y alineadores invisibles. Corregimos la posición de tus dientes priorizando la estética y la función.",
@@ -41,20 +51,33 @@ const services = [
   }
 ];
 
-const Services = () => {
+interface ServicesProps {
+  data?: ServiceData[] | null;
+}
+
+const Services = ({ data }: ServicesProps) => {
+  const servicesToDisplay = data?.length
+    ? data.map(service => ({
+      title: service.attributes.title,
+      description: service.attributes.description,
+      icon: iconMap[service.attributes.iconName] || Smile,
+      categoryIndex: service.attributes.categoryIndex
+    }))
+    : defaultServices;
+
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24">
       <div className="container mx-auto px-6 md:px-12">
 
         {/* Enhanced Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-xs mb-4 block">
+          <span className="text-[#B5902B] font-bold tracking-widest uppercase text-xs mb-4 block">
             Excelencia Clínica
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-[#0f3d56] mb-6 leading-tight">
             Nuestros Tratamientos
           </h2>
-          <div className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full mb-8"></div>
+          <div className="w-24 h-1 bg-[#B5902B] mx-auto rounded-full mb-8"></div>
           <p className="text-gray-600 text-lg leading-relaxed">
             Ofrecemos soluciones integrales diseñadas para tu salud y estética. Combinamos <span className="font-semibold text-[#0f3d56]">ciencia y arte</span> para ofrecerte los mejores resultados en cada especialidad odontológica.
           </p>
@@ -62,19 +85,19 @@ const Services = () => {
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {services.map((service, index) => (
+          {servicesToDisplay.map((service, index) => (
             <div
               key={index}
               className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 group border border-gray-100 flex flex-col relative overflow-hidden"
             >
               {/* Decorative background element on hover */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37]/5 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#B5902B]/5 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
 
               <div className="w-16 h-16 bg-[#FFFBF0] rounded-2xl flex items-center justify-center mb-8 group-hover:bg-[#0f3d56] transition-colors duration-300 z-10">
-                <service.icon className="w-8 h-8 text-[#0f3d56] group-hover:text-[#D4AF37] transition-colors duration-300" strokeWidth={1.5} />
+                <service.icon className="w-8 h-8 text-[#0f3d56] group-hover:text-[#B5902B] transition-colors duration-300" strokeWidth={1.5} />
               </div>
 
-              <h3 className="text-xl font-bold text-[#0f3d56] mb-4 group-hover:text-[#D4AF37] transition-colors">
+              <h3 className="text-xl font-bold text-[#0f3d56] mb-4 group-hover:text-[#B5902B] transition-colors">
                 {service.title}
               </h3>
 
@@ -84,7 +107,7 @@ const Services = () => {
 
               <Link
                 href={`/tratamientos?category=${service.categoryIndex}`}
-                className="flex items-center text-[#0f3d56] font-semibold text-sm group-hover:text-[#D4AF37] transition-colors mt-auto"
+                className="flex items-center text-[#0f3d56] font-semibold text-sm group-hover:text-[#B5902B] transition-colors mt-auto"
               >
                 <span>Más información</span>
                 <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-2 transition-transform" />

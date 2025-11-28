@@ -126,7 +126,7 @@ export default function TestimoniosPage() {
     };
 
     return (
-        <main className="min-h-screen bg-white text-[#333333] font-sans">
+        <main className="min-h-screen text-[#333333] font-sans">
             <Header />
 
             {/* Hero Section */}
@@ -135,7 +135,7 @@ export default function TestimoniosPage() {
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
                 </div>
                 <div className="relative z-10 text-center text-white px-6">
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#D4AF37]">
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#B5902B]">
                         Testimonios
                     </span>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -148,7 +148,7 @@ export default function TestimoniosPage() {
             </section>
 
             {/* Stats Section */}
-            <section className="py-16 bg-white border-b border-gray-100">
+            <section className="py-16 border-b border-gray-100">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
                         {[
@@ -160,7 +160,7 @@ export default function TestimoniosPage() {
                             const Icon = stat.icon;
                             return (
                                 <div key={idx} className="text-center">
-                                    <Icon className="w-8 h-8 mx-auto mb-3 text-[#D4AF37]" />
+                                    <Icon className="w-8 h-8 mx-auto mb-3 text-[#B5902B]" />
                                     <p className="text-3xl font-bold text-[#0f3d56] mb-1">{stat.value}</p>
                                     <p className="text-sm text-gray-600">{stat.label}</p>
                                 </div>
@@ -171,7 +171,7 @@ export default function TestimoniosPage() {
             </section>
 
             {/* Testimonials Grid */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0f3d56] mb-4">
@@ -190,11 +190,11 @@ export default function TestimoniosPage() {
                                     }`}
                                 style={{ transitionDelay: `${idx * 50}ms` }}
                             >
-                                <Quote className="w-10 h-10 text-[#D4AF37] mb-4 opacity-50" />
+                                <Quote className="w-10 h-10 text-[#B5902B] mb-4 opacity-50" />
 
                                 <div className="flex gap-1 mb-4">
                                     {[...Array(testimonial.rating)].map((_, i) => (
-                                        <Star key={i} fill="#D4AF37" className="w-4 h-4 text-[#D4AF37]" />
+                                        <Star key={i} fill="#B5902B" className="w-4 h-4 text-[#B5902B]" />
                                     ))}
                                 </div>
 
@@ -218,7 +218,7 @@ export default function TestimoniosPage() {
             </section>
 
             {/* Before/After Gallery */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="text-center mb-16">
                         <span className="text-xs font-bold tracking-[0.2em] text-gray-400 uppercase block mb-3">
@@ -297,7 +297,7 @@ export default function TestimoniosPage() {
                         href="https://wa.me/34649537609"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-[#D4AF37] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
+                        className="bg-[#B5902B] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
                     >
                         Reservar Consulta
                     </a>

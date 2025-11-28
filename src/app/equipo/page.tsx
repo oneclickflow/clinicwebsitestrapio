@@ -95,7 +95,7 @@ export default function EquipoPage() {
     ];
 
     return (
-        <main className="min-h-screen bg-white text-[#333333] font-sans">
+        <main className="min-h-screen text-[#333333] font-sans">
             <Header />
 
             {/* Hero Section */}
@@ -104,7 +104,7 @@ export default function EquipoPage() {
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
                 </div>
                 <div className="relative z-10 text-center text-white px-6">
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#D4AF37]">
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#B5902B]">
                         Nuestro Equipo
                     </span>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -117,7 +117,7 @@ export default function EquipoPage() {
             </section>
 
             {/* Team Members */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="space-y-20">
                         {team.map((member, idx) => (
@@ -129,7 +129,7 @@ export default function EquipoPage() {
                                 {/* Image */}
                                 <div className="lg:w-1/2">
                                     <div className="relative group">
-                                        <div className="absolute inset-0 bg-[#D4AF37] rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                                        <div className="absolute inset-0 bg-[#B5902B] rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
                                         <img
                                             src={member.image}
                                             alt={member.name}
@@ -144,7 +144,7 @@ export default function EquipoPage() {
                                         <h2 className="text-3xl md:text-4xl font-bold text-[#0f3d56] mb-2">
                                             {member.name}
                                         </h2>
-                                        <p className="text-xl text-[#D4AF37] font-semibold mb-4">
+                                        <p className="text-xl text-[#B5902B] font-semibold mb-4">
                                             {member.specialty}
                                         </p>
                                         <p className="text-gray-600 leading-relaxed">
@@ -155,14 +155,14 @@ export default function EquipoPage() {
                                     {/* Quick Info Grid */}
                                     <div className="grid grid-cols-2 gap-4 py-6 border-y border-gray-200">
                                         <div className="flex items-center gap-3">
-                                            <Calendar className="w-5 h-5 text-[#D4AF37]" />
+                                            <Calendar className="w-5 h-5 text-[#B5902B]" />
                                             <div>
                                                 <p className="text-xs text-gray-500">Experiencia</p>
                                                 <p className="font-semibold text-gray-800">{member.experience}</p>
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <Languages className="w-5 h-5 text-[#D4AF37]" />
+                                            <Languages className="w-5 h-5 text-[#B5902B]" />
                                             <div>
                                                 <p className="text-xs text-gray-500">Idiomas</p>
                                                 <p className="font-semibold text-gray-800">{member.languages.length}</p>
@@ -195,7 +195,7 @@ export default function EquipoPage() {
                                             {member.specializations.map((spec, i) => (
                                                 <span
                                                     key={i}
-                                                    className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                                                    className="bg-white text-gray-700 px-3 py-1 rounded-full text-sm"
                                                 >
                                                     {spec}
                                                 </span>
@@ -228,7 +228,7 @@ export default function EquipoPage() {
             </section>
 
             {/* Why Our Team */}
-            <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0f3d56] mb-12">
@@ -250,7 +250,7 @@ export default function EquipoPage() {
                                 }
                             ].map((item, idx) => (
                                 <div key={idx} className="p-6">
-                                    <div className="w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <div className="w-12 h-12 bg-[#B5902B] rounded-full flex items-center justify-center mx-auto mb-4">
                                         <Award className="w-6 h-6 text-white" />
                                     </div>
                                     <h3 className="text-xl font-bold text-[#0f3d56] mb-2">{item.title}</h3>
@@ -275,7 +275,7 @@ export default function EquipoPage() {
                         href="https://wa.me/34649537609"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-[#D4AF37] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
+                        className="bg-[#B5902B] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
                     >
                         Reservar Consulta
                     </a>

@@ -6,13 +6,15 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #FFFBF0;
   --foreground: #171717;
+  --primary: #B5902B;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff; /* Force light mode for this design as per screenshot */
+    --background: #FFFBF0;
+    /* Force light mode for this design as per screenshot */
     --foreground: #171717;
   }
 }

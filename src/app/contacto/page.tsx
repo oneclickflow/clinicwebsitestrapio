@@ -34,7 +34,7 @@ export default function ContactoPage() {
     };
 
     return (
-        <main className="min-h-screen bg-white text-[#333333] font-sans">
+        <main className="min-h-screen text-[#333333] font-sans">
             <Header />
 
             {/* Hero Section */}
@@ -43,7 +43,7 @@ export default function ContactoPage() {
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
                 </div>
                 <div className="relative z-10 text-center text-white px-6">
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#D4AF37]">
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#B5902B]">
                         Estamos Aquí Para Ti
                     </span>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -56,7 +56,7 @@ export default function ContactoPage() {
             </section>
 
             {/* Contact Section */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
 
@@ -189,10 +189,10 @@ export default function ContactoPage() {
 
                             {/* Contact Cards */}
                             <div className="space-y-4">
-                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-[#D4AF37] transition-all duration-300">
+                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-[#B5902B] transition-all duration-300">
                                     <div className="flex items-start gap-4">
                                         <div className="w-12 h-12 bg-[#0f3d56] rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <MapPin className="w-6 h-6 text-[#D4AF37]" />
+                                            <MapPin className="w-6 h-6 text-[#B5902B]" />
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-gray-800 mb-1">Dirección</h3>
@@ -204,10 +204,10 @@ export default function ContactoPage() {
                                     </div>
                                 </div>
 
-                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-[#D4AF37] transition-all duration-300">
+                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-[#B5902B] transition-all duration-300">
                                     <div className="flex items-start gap-4">
                                         <div className="w-12 h-12 bg-[#0f3d56] rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Phone className="w-6 h-6 text-[#D4AF37]" />
+                                            <Phone className="w-6 h-6 text-[#B5902B]" />
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-gray-800 mb-1">Teléfono</h3>
@@ -221,10 +221,10 @@ export default function ContactoPage() {
                                     </div>
                                 </div>
 
-                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-[#D4AF37] transition-all duration-300">
+                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-[#B5902B] transition-all duration-300">
                                     <div className="flex items-start gap-4">
                                         <div className="w-12 h-12 bg-[#0f3d56] rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Mail className="w-6 h-6 text-[#D4AF37]" />
+                                            <Mail className="w-6 h-6 text-[#B5902B]" />
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-gray-800 mb-1">Email</h3>
@@ -238,10 +238,10 @@ export default function ContactoPage() {
                                     </div>
                                 </div>
 
-                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-[#D4AF37] transition-all duration-300">
+                                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-[#B5902B] transition-all duration-300">
                                     <div className="flex items-start gap-4">
                                         <div className="w-12 h-12 bg-[#0f3d56] rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Clock className="w-6 h-6 text-[#D4AF37]" />
+                                            <Clock className="w-6 h-6 text-[#B5902B]" />
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-gray-800 mb-2">Horario</h3>
@@ -274,7 +274,7 @@ export default function ContactoPage() {
             </section>
 
             {/* Emergency Contact */}
-            <section className="py-16 bg-white border-t border-gray-100">
+            <section className="py-16 border-t border-gray-100">
                 <div className="container mx-auto px-6 md:px-12 text-center">
                     <h2 className="text-2xl md:text-3xl font-bold text-[#0f3d56] mb-4">
                         ¿Tienes una Urgencia Dental?

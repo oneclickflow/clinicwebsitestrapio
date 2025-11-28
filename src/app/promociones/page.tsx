@@ -13,7 +13,7 @@ export default function PromocionesPage() {
             description: "Evaluación completa con diagnóstico y plan de tratamiento personalizado sin coste",
             discount: "100%",
             icon: Gift,
-            color: "from-[#D4AF37] to-[#c49d2f]",
+            color: "from-[#B5902B] to-[#c49d2f]",
             features: ["Revisión completa", "Radiografías incluidas", "Plan personalizado", "Sin compromiso"],
             validity: "Válido todo el año"
         },
@@ -44,7 +44,7 @@ export default function PromocionesPage() {
             description: "Limpieza dental profesional con ultrasonidos más revisión completa",
             discount: "40%",
             icon: Tag,
-            color: "from-[#D4AF37] to-[#c49d2f]",
+            color: "from-[#B5902B] to-[#c49d2f]",
             features: ["Limpieza con ultrasonidos", "Pulido dental", "Revisión completa", "Consejos personalizados"],
             validity: "Nuevos pacientes",
             originalPrice: "100€",
@@ -93,7 +93,7 @@ export default function PromocionesPage() {
     ];
 
     return (
-        <main className="min-h-screen bg-white text-[#333333] font-sans">
+        <main className="min-h-screen text-[#333333] font-sans">
             <Header />
 
             {/* Hero Section */}
@@ -102,7 +102,7 @@ export default function PromocionesPage() {
                     <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTEwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
                 </div>
                 <div className="relative z-10 text-center text-white px-6">
-                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#D4AF37]">
+                    <span className="text-xs font-bold tracking-[0.2em] uppercase block mb-4 text-[#B5902B]">
                         Ofertas Especiales
                     </span>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -115,7 +115,7 @@ export default function PromocionesPage() {
             </section>
 
             {/* Promotions Grid */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0f3d56] mb-4">
@@ -160,7 +160,7 @@ export default function PromocionesPage() {
                                         <ul className="space-y-2 mb-6">
                                             {promo.features.map((feature, i) => (
                                                 <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
-                                                    <Check className="w-4 h-4 text-[#D4AF37] flex-shrink-0" />
+                                                    <Check className="w-4 h-4 text-[#B5902B] flex-shrink-0" />
                                                     {feature}
                                                 </li>
                                             ))}
@@ -175,12 +175,12 @@ export default function PromocionesPage() {
                                                 <div className="flex items-center justify-between">
                                                     <div>
                                                         <p className="text-sm text-gray-500 line-through">{promo.originalPrice}</p>
-                                                        <p className="text-2xl font-bold text-[#D4AF37]">{promo.finalPrice}</p>
+                                                        <p className="text-2xl font-bold text-[#B5902B]">{promo.finalPrice}</p>
                                                     </div>
                                                 </div>
                                             ) : (
                                                 <div>
-                                                    <p className="text-2xl font-bold text-[#D4AF37]">Gratis</p>
+                                                    <p className="text-2xl font-bold text-[#B5902B]">Gratis</p>
                                                     <p className="text-sm text-gray-500">Sin coste alguno</p>
                                                 </div>
                                             )}
@@ -199,7 +199,7 @@ export default function PromocionesPage() {
             </section>
 
             {/* Financing Options */}
-            <section className="py-20 bg-white">
+            <section className="py-20">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#0f3d56] mb-4">
@@ -216,10 +216,10 @@ export default function PromocionesPage() {
                             return (
                                 <div
                                     key={idx}
-                                    className="text-center p-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 hover:border-[#D4AF37] transition-all duration-300"
+                                    className="text-center p-8 bg-gradient-to-br from-white to-white rounded-2xl border border-gray-100 hover:border-[#B5902B] transition-all duration-300"
                                 >
                                     <div className="w-16 h-16 bg-[#0f3d56] rounded-full flex items-center justify-center mx-auto mb-4">
-                                        <Icon className="w-8 h-8 text-[#D4AF37]" />
+                                        <Icon className="w-8 h-8 text-[#B5902B]" />
                                     </div>
                                     <h3 className="text-xl font-bold text-[#0f3d56] mb-3">
                                         {option.title}
@@ -235,7 +235,7 @@ export default function PromocionesPage() {
             </section>
 
             {/* Terms & Conditions */}
-            <section className="py-12 bg-gray-50 border-t border-gray-200">
+            <section className="py-12 border-t border-gray-200">
                 <div className="container mx-auto px-6 md:px-12">
                     <div className="max-w-4xl mx-auto">
                         <h3 className="text-lg font-bold text-[#0f3d56] mb-4">Términos y Condiciones</h3>
@@ -265,7 +265,7 @@ export default function PromocionesPage() {
                             href="https://wa.me/34649537609"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-[#D4AF37] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
+                            className="bg-[#B5902B] text-[#0f3d56] px-8 py-4 rounded-lg font-semibold hover:bg-[#c49d2f] transition-colors duration-300 shadow-xl inline-block"
                         >
                             Reservar Consulta
                         </a>
