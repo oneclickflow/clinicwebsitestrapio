@@ -120,5 +120,60 @@ If you deploy Strapi to Render/Heroku, uploaded images will disappear when the s
 - Configure it in \`config/plugins.js\`.
 
 ## Troubleshooting
-- **Images not showing?** Check if `NEXT_PUBLIC_STRAPI_API_URL` is correct.
-- **CORS Errors?** Ensure your Strapi `config/middlewares.js` allows your frontend domain.
+## Advanced: Setting up the Page Builder (Dynamic Zones)
+
+To enable the "drag and drop" flexibility, you need to configure Components and a Page collection.
+
+### 1. Create Components
+Go to **Content-Type Builder** > **Create new component**.
+
+**Category**: `layout` (for all of them)
+
+#### A. Hero Component (`hero`)
+- Same fields as the Hero Single Type:
+    - `title` (Short Text)
+    - `subtitle` (Long Text)
+    - `backgroundImage` (Single Media)
+    - `primaryCTAText` (Short Text)
+    - `primaryCTALink` (Short Text)
+    - `secondaryCTAText` (Short Text)
+    - `secondaryCTALink` (Short Text)
+    - `rating` (Decimal)
+    - `reviewCountText` (Short Text)
+
+#### B. Services Component (`services`)
+- `title` (Short Text) - *Optional override title*
+- `description` (Long Text) - *Optional override description*
+
+#### C. Medical Team Component (`medical-team`)
+- `title` (Short Text)
+- `description` (Long Text)
+
+#### D. Testimonials Component (`testimonials`)
+- `title` (Short Text)
+- `subtitle` (Short Text)
+
+### 2. Create "Page" Collection Type
+1.  Create a new Collection Type called `Page`.
+2.  Add field: `title` (Short Text).
+3.  Add field: `slug` (Short Text) - *Important: Use this to identify the page, e.g., "home"*.
+4.  Add field: **Dynamic Zone** named `blocks`.
+    - Click "Use existing components".
+    - Select all the components you created in the `layout` category.
+5.  Save.
+
+### 3. Create Your Homepage
+1.  Go to **Content Manager** > **Page**.
+2.  Create a new entry.
+3.  **Title**: Home
+4.  **Slug**: `home` (The code specifically looks for this slug!).
+5.  **Blocks**: Click "+" to add components.
+    - Add a `Hero`.
+    - Add `Services`.
+    - Add `Medical Team`.
+    - Add `Testimonials`.
+    - *Drag and drop them to reorder!*
+6.  Save and Publish.
+
+### 4. Permissions
+Don't forget to go to **Settings** > **Roles** > **Public** and check **find** and **findOne** for the **Page** collection.

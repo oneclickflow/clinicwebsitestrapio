@@ -20,6 +20,65 @@ export interface StrapiImage {
     };
 }
 
+// --- Components ---
+
+export interface ComponentHero {
+    id: number;
+    __component: 'layout.hero';
+    title: string;
+    subtitle: string;
+    primaryCTAText: string;
+    primaryCTALink: string;
+    secondaryCTAText: string;
+    secondaryCTALink: string;
+    rating: number;
+    reviewCountText: string;
+    backgroundImage: {
+        data: StrapiImage;
+    };
+}
+
+export interface ComponentServices {
+    id: number;
+    __component: 'layout.services';
+    title: string;
+    description: string;
+    // In the component version, we might want to allow selecting specific services or just showing all.
+    // For simplicity, we'll assume this block just triggers the "Services Section" which fetches services separately or has them embedded.
+    // Let's assume for now it's just a trigger to render the section, maybe with a custom title.
+}
+
+export interface ComponentMedicalTeam {
+    id: number;
+    __component: 'layout.medical-team';
+    title: string;
+    description: string;
+}
+
+export interface ComponentTestimonials {
+    id: number;
+    __component: 'layout.testimonials';
+    title: string;
+    subtitle: string;
+}
+
+export type DynamicBlock =
+    | ComponentHero
+    | ComponentServices
+    | ComponentMedicalTeam
+    | ComponentTestimonials;
+
+// --- Collection Types ---
+
+export interface PageData {
+    id: number;
+    attributes: {
+        title: string;
+        slug: string;
+        blocks: DynamicBlock[];
+    };
+}
+
 export interface HeroData {
     id: number;
     attributes: {

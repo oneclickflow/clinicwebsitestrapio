@@ -12,6 +12,8 @@ import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon';
 import ClinicInstallations from '@/components/ClinicInstallations';
 import MedicalTeam from '@/components/MedicalTeam';
 import { fetchAPI } from '@/lib/strapi';
+import BlockRenderer from '@/components/BlockRenderer';
+import { PageData } from '@/types/strapi';
 
 async function getHeroData() {
   try {
@@ -49,25 +51,78 @@ async function getTestimonials() {
   }
 }
 
+async function getPageData(slug: string) {
+  try {
+    // Populate blocks and their nested fields (deep population might be needed depending on component structure)
+    // For simple components, populate: "blocks.backgroundImage" etc might work, or use a plugin like populate-deep
+    // Here we try a standard populate approach for known components
+    const res = await fetchAPI("/pages", {
+      filters: { slug },
+      populate: {
+        blocks: {
+          populate: "*"
+        }
+      }
+    });
+    return res?.data?.[0];
+  } catch (error) {
+    return null;
+  }
+}
+
 export default async function Home() {
   const heroData = await getHeroData();
   const servicesData = await getServices();
   const doctorsData = await getDoctors();
   const testimonialsData = await getTestimonials();
 
+  // Try to fetch dynamic page layout
+  const pageData: PageData | null = await getPageData('home');
+  const blocks = pageData?.attributes?.blocks;
+
+  const globalData = {
+    services: servicesData,
+    doctors: doctorsData,
+    testimonials: testimonialsData
+  };
+
   return (
     <main className="min-h-screen text-[#333333] font-sans">
       <Header />
 
-      <Hero data={heroData} />
-      <ClinicInstallations />
-      <Services data={servicesData} />
-      <MedicalTeam data={doctorsData} />
-      <BeforeAfterSection />
-      <TrustSection />
-      <Testimonials data={testimonialsData} />
-      <CTABanner />
-      <ContactPreview />
+      {blocks && blocks.length > 0 ? (
+        // Dynamic Layout from Strapi Page Builder
+        <BlockRenderer blocks={blocks} globalData={globalData} />
+      ) : (
+        // Fallback: Fixed Layout
+        <>
+          <Hero data={heroData} />
+          <ClinicInstallations />
+          <Services data={servicesData} />
+          <MedicalTeam data={doctorsData} />
+          <BeforeAfterSection />
+          <TrustSection />
+          <Testimonials data={testimonialsData} />
+        </>
+      )}
+
+      {/* Static Sections that should always be there (unless moved to blocks too) */}
+      {!blocks && (
+        <>
+          <CTABanner />
+          <ContactPreview />
+        </>
+      )}
+
+      {/* If using blocks, we might want to include these if they aren't blocks yet */}
+      {blocks && blocks.length > 0 && (
+        <>
+          <BeforeAfterSection />
+          <TrustSection />
+          <CTABanner />
+          <ContactPreview />
+        </>
+      )}
 
       <Footer />
 
